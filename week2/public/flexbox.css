@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+}
+
+header {
+    height: 50px;
+    width: 100%;
+    display: -webkit-flex;
+}
+
+nav {
+    display: flex;
+    padding-top: 12px;
+}
+
+nav ul {
+    display: flex;
+    width: 200px;
+    margin: 0 auto;
+}
+
+li {
+    float: left;
+    padding: 0 10px 0 10px;
+    width: 50px;
+}
+
+ul, li{
+    list-style-type: none
+}
+
+.content {
+    min-height: 100%;
+    width: 100%;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
