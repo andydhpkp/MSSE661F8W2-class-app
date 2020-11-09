@@ -18,7 +18,6 @@ exports.getAllTasks = function(req, res) {
   });
 };
 
-// http://localhost:3000/tasks/1
 exports.getTask = function(req, res) {
   con.query(queries.SINGLE_TASKS, [req.params.taskId], function(err, result) {
     if (err) {
@@ -28,13 +27,6 @@ exports.getTask = function(req, res) {
   });
 };
 
-// http://localhost:3000/tasks/1
-/**
- * POST request -
- * {
- *  name: 'A task name'
- * }
- */
 exports.createTask = function(req, res) {
   con.query(queries.INSERT_TASK, [req.body.name], function(err, result) {
     if (err) {
@@ -45,14 +37,6 @@ exports.createTask = function(req, res) {
   });
 };
 
-// http://localhost:3000/tasks/1
-/**
- * PUT request -
- * {
- *  name: 'A task name',
- *  state: 'completed'
- * }
- */
 exports.updateTask = function(req, res) {
   con.query(
     queries.UPDATE_TASK,
@@ -66,7 +50,6 @@ exports.updateTask = function(req, res) {
   );
 };
 
-// http://localhost:3000/tasks/1
 exports.deleteTask = function(req, res) {
   con.query(queries.DELETE_TASK, [req.params.taskId], function(err) {
     if (err) {
