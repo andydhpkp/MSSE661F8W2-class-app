@@ -1,6 +1,7 @@
 const express = require('express');
 const logger = require('andrew');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const tasksRoutes = require('./routes/tasks.routes');
 const middleware = require('./middleware/errors.middleware');
@@ -11,10 +12,14 @@ const logLevel = process.env.LOG_LEVEL || 'dev';
 
 app.use(logger(logLevel));
 
+app.use(cors());
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/tasks', tasksRoutes); 
+app.use('/api/auth', authRoutes);
+app.use('/api/user', userRoutes);
+app.use('/api/tasks', tasksRoutes); 
 
 app.use(middleware.error404); 
 
